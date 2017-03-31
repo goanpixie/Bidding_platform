@@ -1,0 +1,148 @@
+<button ng-click="logout()">Sign Out</button>
+
+<h1>Welcome to Bid {{newUser.name}}:)</h1>
+
+<h4 ng-if="errors">Error:
+   
+
+
+    <p ng-repeat="message in messages">{{message}}</p>
+	</h4>
+
+  <ng-form name="X1" ng-submit="endbid()" novalidate >
+
+<div class ="Main_div">
+<div class="scroll1">
+    <ng-form name="product1" novalidate isolate-form>
+      <input type="image" value="Product1" ><br>
+      <input type="number" name="input1" ng-model="product1.bid" min="1" required>
+
+      <input type="button" value="Bid" ng-click="product1_bid()">
+    </form>
+
+    <div class="product1_m">
+    <p ng-if = "!canWeBid1"> Bid is too small</p>
+
+    <!-- <h3>{{product1_bids}}</h3> -->
+    
+    <div  ng-repeat="bid in product1_bids">
+    	<div >{{bid.username}}: ${{bid.bid}}</div>
+    </div>
+
+    </div>
+    </div>
+
+    <style>
+    div.product1_m{
+background-color: #00FFFF;
+    width: 150px;
+    height: 100px;
+    overflow: scroll;
+    }
+    	div.scroll1 {
+    
+    
+    float:left;
+    width:100px;
+    display: inline;
+		}
+
+       div.Main_div{
+       	width:100%;
+       	display:inline-flex;
+       	
+
+    	}
+
+    </style>
+
+
+    
+
+
+    <br><br>
+
+
+    <div class="scroll2">
+    	<ng-form name="product2" novalidate isolate-form>
+      		<input type="image" value="Product2"><br>
+     		<input type="number" name="input2" ng-model="product2.bid" min="1" required>
+     		 <input type="button" value="Bid" ng-click="product2_bid()">
+    	</form>
+    <div class="product2_m">
+    	<p ng-if = "!canWeBid2"> Bid is too small</p>
+    
+    <!-- <h3>{{product1_bids}}</h3> -->
+    
+    	<div  ng-repeat="bid in product2_bids">
+    		<div>{{bid.username}}: ${{bid.bid}}
+    		</div>
+    	</div>
+    </div>
+
+
+    </div>
+
+    <style>
+
+    div.product2_m{
+    background-color: orange;
+    width: 150px;
+    height: 100px;
+    overflow: scroll;
+    }
+    	div.scroll2 {
+
+    margin-top: 50px;
+    margin:0 auto;
+    width:100px;
+    display: inline;
+
+}
+    </style>
+
+    <br><br>
+
+
+<div class="scroll3">
+  	<ng-form name="product3" novalidate isolate-form>
+      <input type="image" value="Product3"><br>
+      <input type="number" name="input3" ng-model="product3.bid" min="1" required>
+      <input type="button" value="Bid" ng-click="product3_bid()">
+    </form>
+    <div class="product3_m">
+	<p ng-if = "!canWeBid3"> Bid is too small</p>
+ 
+    <!-- <h3>{{product1_bids}}</h3> -->
+    
+    
+    <div  ng-repeat="bid in product3_bids">
+    	<div >{{bid.username}}: ${{bid.bid}}</div>
+    
+    </div>
+    </div>
+</div>
+    <style>
+
+    div.product3_m{
+   	background-color: yellow;
+    width: 150px;
+    height: 100px;
+    overflow: scroll;
+     }	
+    	div.scroll3 {
+   
+
+    float:right;
+    width:150px;
+    display: inline;
+}
+    </style>
+    <br><br>
+</div>
+
+    <h3>You can end the bid only when all the three bids are valid</h3>
+   <div ng-if="product1.input1.$valid && product2.input2.$valid && product3.input3.$valid"> <a href="#!/finalbids">End bid</a></div>
+
+  </ng-form>
+

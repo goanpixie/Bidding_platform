@@ -1,0 +1,57 @@
+<button ng-click="logout()">Sign Out</button>
+<a href="#!/dashboard">Dashboard</a>
+
+<h1>Bidding out fellas!</h1>
+
+<h2>{{newUser.name}} ended the Bid</h2>
+
+<h3>Highest Bidder per product</h3>
+
+<div class="product1">
+<input type="image" value="Product1"></h3>
+<h3>{{product1_bids[product1_bids.length-1].username}}</h3>
+<h3>${{product1_bids[product1_bids.length-1].bid}}</h3>
+
+</div>
+
+<style>
+	div.product1{
+		background-color: #00FFFF;
+		width: 200px;
+    	height: 100px;
+	}
+</style><br><br>
+
+
+<div class="product2">
+<input type="image" value="Product2"></h3>
+<h3>{{product2_bids[product2_bids.length-1].username}}</h3>
+<h3>${{product2_bids[product2_bids.length-1].bid}}</h3>
+
+</div>
+
+<style>
+	div.product2{
+		background-color: orange;
+		width: 200px;
+    	height: 100px;
+	}
+</style><br><br>
+
+
+<div class="product3">
+<input type="image" value="Product3"></h3>
+<h3>{{product3_bids[product3_bids.length-1].username}}</h3>
+<h3>${{product3_bids[product3_bids.length-1].bid}}</h3>
+
+</div>
+
+<style>
+	div.product3{
+		background-color: yellow;
+		width: 200px;
+    	height: 100px;
+	}
+</style>
+
+<button ng-click="refresh()">Start Bid</button>
